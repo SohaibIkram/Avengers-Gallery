@@ -1,18 +1,18 @@
 /**
- * 
- * Use Loops , Functions 
- * 
+ *
+ * Use Loops , Functions
+ *
  * And Manipulate the DOM
- * 
- * 
- * 
+ *
+ *
+ *
  */
 
 
 
 
 //This is a JSON.. JavaScript Object Notion
-let avengers = [{
+var avengers = [{
   name: "black-widow.jpg",
   alt: "The Black widow is my fav"
 }, {
@@ -40,21 +40,17 @@ let avengers = [{
 
 const imageUrl = "./assets/images";
 
+return_grid();
 
-document.getElementById("gallery").innerHTML = function () {
+function return_grid(){
+  document.getElementById("gallery").innerHTML = function () {
   let gridHTML = '';
-  try {
-    avengers.forEach(avenger => {
+  avengers.forEach(avenger => {
       gridHTML += generateColumn(avenger.name, avenger.alt);
-    });
+      });
     return gridHTML;
-  } catch (Error) {
-    console.log(Error);
-    return "Avengers in the End Game";
-  }
-}();
-
-
+  }();
+}
 
 function generateColumn(imgSrc, imgAlt) {
   return `<div class="col-12 d-flex justify-content-center align-items-center col-md-6 col-lg-3">
@@ -62,12 +58,15 @@ function generateColumn(imgSrc, imgAlt) {
       </div>`;
 }
 
+// In order to run this function, you need to keep a photo of the avanegr to be added in the ./assets/images directory with the file name as the name of the avenger (which is to be plaved in the form). For example, try loki in form.
+function add_to_avengers_arr(){
+  var newobj = {name: document.getElementById("avengerName").value + ".jpg", alt: document.getElementById("avengerAlt").value};
+  avengers.push(newobj);
 
+return_grid();
+}
 
-/***
- * add_to_avaengers_arr() 
- * 
- *      Add to avengers json.
- *      It will create a new column. 
- * 
- */ 
+function del_from_avengers_arr(){
+  avengers.splice(document.getElementById("removePic").value - 1,1);
+  return_grid();
+}

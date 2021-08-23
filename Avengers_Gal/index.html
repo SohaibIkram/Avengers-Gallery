@@ -4,7 +4,7 @@
 
 <head>
     <title>
-        Calculator Program in JavaScript
+        Avengers Gallery
     </title>
 
 
@@ -28,18 +28,30 @@
 
 
  -->
-    <main class="container-fluid">
-        <div id="gallery" class="row">
-        </div>
+<main class="container-fluid">
+  <div id="gallery" class="row">
+  </div>
 
-<!--
-<form>
-<input type="text" id="avengeRnAME">
-<input type="text" id="avaergeAlt">
+  <div class="">
+    <br><br>
+    <p><b>If you want to add to the gallery:</b></p>
+    <form>
+      <input type="text" placeholder="Avenger Name" id="avengerName">
+      <input type="text" placeholder="Alt Text" id="avengerAlt">
+      <input type="button" value="Add" onclick="add_to_avengers_arr()">
+    </form>
 
-<input type="button" value="Add" onclick="add_to_avaengers_arr()">
-</form>
--->
+    <br><br>
+    <p><b>If you want to remove from the gallery:</b></p>
+    <form>
+      <input type="text" placeholder="Picture position/number" id="removePic">
+      <input type="button" value="Remove" onclick="del_from_avengers_arr()">
+      </form>
+
+  </div>
+
+
+
     </main>
 
 
